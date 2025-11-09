@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdbool.h>
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
 
@@ -16,6 +17,11 @@ int main(int argc, char* argv[])
 	SDL_Surface *surface = NULL;
 	if(argc==2)	surf = IMG_Load(argv[1]);
 	else surf = IMG_Load("img.png");
+	if(surf==NULL) 
+	{
+		printf("File/directory not found and img.png does not exist, exiting...\n");
+		return 1;
+	}
 	if(islittlendian())	surface = SDL_ConvertSurfaceFormat(surf,SDL_PIXELFORMAT_BGRA32,0);
 	else surface = SDL_ConvertSurfaceFormat(surf,SDL_PIXELFORMAT_RGBA32,0);
 
