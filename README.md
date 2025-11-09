@@ -3,7 +3,10 @@ Converts png file to hex text file, 3 channel 8 bit colour per pixel. Written in
 
 Compiling
 Linux - After updating your system run 
+
+```bash
 sudo apt install libsdl2-dev libsdl2-image-dev
+```
 This will also automatically install other dependancies. Then use make.
 
 Windows - No need to install SDL2 as headers and libs/dlls already provided, just clone the repository and run mingw32-make.
